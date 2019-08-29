@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6a622ff4.chunk.css",
+    "main.js": "/static/js/main.4730cad1.chunk.js",
+    "main.js.map": "/static/js/main.4730cad1.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.feb3c986.js",
+    "runtime~main.js.map": "/static/js/runtime~main.feb3c986.js.map",
+    "static/css/2.e8d046a2.chunk.css": "/static/css/2.e8d046a2.chunk.css",
+    "static/js/2.e0518808.chunk.js": "/static/js/2.e0518808.chunk.js",
+    "static/js/2.e0518808.chunk.js.map": "/static/js/2.e0518808.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.180df367c03d323ea413f6360465eac7.js": "/precache-manifest.180df367c03d323ea413f6360465eac7.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.e8d046a2.chunk.css.map": "/static/css/2.e8d046a2.chunk.css.map",
+    "static/css/main.6a622ff4.chunk.css.map": "/static/css/main.6a622ff4.chunk.css.map",
+    "static/media/booking.jpg": "/static/media/booking.a383dc53.jpg",
+    "static/media/coreldraw.jpg": "/static/media/coreldraw.fb9948ec.jpg",
+    "static/media/leather.jpg": "/static/media/leather.98dc5b3a.jpg",
+    "static/media/logo.bmp": "/static/media/logo.d54747b4.bmp",
+    "static/media/metal.jpg": "/static/media/metal.a7631aa6.jpg",
+    "static/media/minimarker.jpg": "/static/media/minimarker.fc6f4e85.jpg",
+    "static/media/plastic.jpg": "/static/media/plastic.eed14094.jpg",
+    "static/media/post.jpg": "/static/media/post.fc2e911b.jpg"
+  }
+}
