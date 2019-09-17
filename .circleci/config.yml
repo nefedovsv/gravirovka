@@ -1,0 +1,67 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/gravirovka
+    docker:
+      - image: circleci/node:12.8.1
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install dependency
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Build
+          command: npm run build
+      - persist_to_workspace:
+          root: ~/gravirovka
+          paths:
+            - build
+      - run:
+          name: List
+          command: ls -al
+      - run:
+          name: pwd
+          command: pwd
+  deploy:
+    working_directory: ~/gravirovka
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - b1:15:1c:ef:36:1b:8c:f3:12:76:a0:ff:90:ab:54:18
+      - attach_workspace:
+          at: ~/gravirovka/build
+      - run:
+          name: Stop PM2
+          command: |
+            ssh $SSH_USER@$SSH_HOST "pm2 stop all"
+      - run:
+          name: Git pull
+          command: |
+            ssh $SSH_USER@$SSH_HOST "cd gravirovka/ && git pull"
+      - run:
+          name: Deploy Over SSH
+          command: |
+            scp -r ~/gravirovka/build "$SSH_USER@$SSH_HOST:$SSH_DEPLOY_PATH"
+      - run:
+          name: Start PM2
+          command: |
+            ssh $SSH_USER@$SSH_HOST "cd gravirovka/server/dist && pm2 start main.js"
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          filters:
+            branches:
+              only: master
+          requires:
+            - build
