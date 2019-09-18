@@ -10,7 +10,7 @@ export const Gallery: React.FC = () => {
         <Card
           key={data.id}
           hoverable
-          style={{ width: "400px", margin: "50px 0px 0px 85px" }}
+          style={{ width: "400px", margin: "50px 0px 50px 0px" }}
           cover={<img alt="example" src={data.url} />}
         >
           <Divider>

@@ -6,6 +6,7 @@ import { Booking } from "../content/boking/Booking";
 import { Header } from "../header/Header";
 import { NoMatchPage } from "../content/noMachPage/NoMachPage";
 import styles from "./App.module.css";
+import { BackTop } from "antd";
 export const App: React.FC = () => {
   return (
     <Router>
@@ -17,10 +18,13 @@ export const App: React.FC = () => {
           <Route exact path="/booking" component={Booking} />
           <Route component={NoMatchPage} />
         </Switch>
+        <BackTop />
       </div>
+      <br />
       <div className={styles.footer}>
         Engraving Ryazan ©2019 Created by Nefedov Sergey
       </div>
+      <br />
     </Router>
   );
 };
