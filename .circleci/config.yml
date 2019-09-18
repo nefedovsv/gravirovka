@@ -37,7 +37,7 @@ jobs:
           fingerprints:
             - b1:15:1c:ef:36:1b:8c:f3:12:76:a0:ff:90:ab:54:18
       - attach_workspace:
-          at: ~/gravirovka/build
+          at: ~/gravirovka
       - run:
           name: Stop PM2
           command: |
